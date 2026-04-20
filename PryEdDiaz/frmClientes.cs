@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PryEdDiaz
+{
+    public partial class frmClientes : Form
+    {
+        public frmClientes()
+        {
+            InitializeComponent();
+        }
+
+        private void cmdLimpiar_Click(object sender, EventArgs e)
+        {
+            clsArchivo clientes = new clsArchivo();
+            clientes.NomArchi = "Clientes.csv";
+            clientes.BorrarTodo();
+            clientes.Recorrer(dgvClientes);
+            MessageBox.Show("Datos Borrados");
+            mtbCodigoCliente.Clear();
+            txtNombreCliente.Clear();
+            txtDeuda.Clear();
+        }
+
+        private void cmdGrabarCliente_Click(object sender, EventArgs e)
+        {
+            clsArchivo clientes = new clsArchivo();
+            clientes.NomArchi = "Clientes.csv";
+            clientes.Grabar(mtbCodigoCliente.Text, txtNombreCliente.Text, txtDeuda.Text);
+            clientes.Recorrer(dgvClientes);
+        }
+    }
+}
