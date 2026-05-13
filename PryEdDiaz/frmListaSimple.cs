@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PryEdDiaz
+{
+    public partial class frmListaSimple : Form
+    {
+        public frmListaSimple()
+        {
+            InitializeComponent();
+        }
+
+        clsListaSimple objLista = new clsListaSimple();
+        private void gbListado_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbListaSimple_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos(); 
+        }
+
+        private void txtTramite_TextChanged(object sender, EventArgs e)
+        {
+            ValidarDatos();
+        }
+
+        private void cmdAgregar_Click(object sender, EventArgs e)
+        {
+          
+        
+            clsNodo x = new clsNodo();
+            x.Codigo = Convert.ToInt32(txtCodigo.Text);
+            x.Nombre = txtNombre.Text;
+            x.Tramite = txtTramite.Text;
+
+            objLista.Agregar(x);
+            objLista.Recorrer(dgvGrilla);
+            objLista.Recorrer(cmbCodigo);
+            objLista.Recorrer(lstLista);
+            objLista.Recorrer("clsListaSimple.csv");
+
+            txtCodigo.Clear();
+            txtNombre.Clear();
+            txtTramite.Clear();
+
+
+        }
+
+        private void ValidarDatos()
+        {
+            if (txtCodigo.Text != "" && txtNombre.Text != "" && txtTramite.Text != "")
+            {
+                cmdAgregar.Enabled = true;
+            }
+            else
+            {
+                cmdAgregar.Enabled = false;
+            }
+        }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if (objLista.Primero != null)
+            {
+                Int32 x = Convert.ToInt32(cmbCodigo.Text);
+                objLista.Eliminar(x);
+                objLista.Recorrer(dgvGrilla);
+                objLista.Recorrer(lstLista);
+                objLista.Recorrer(cmbCodigo);
+                objLista.Recorrer("clsListaSimple.csv");
+            }
+            else
+            {
+                MessageBox.Show("No hay elementos para eliminar");
+            }
+            cmdEliminar.Enabled = false;
+            cmbCodigo.Text = "";
+        }
+
+        private void cmbCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCodigo.Text != "")
+            {
+                cmdEliminar.Enabled = true;
+            }
+            else
+            {
+                cmdEliminar.Enabled = false;
+            }
+        }
+    }
+    }
+    
+
