@@ -37,5 +37,22 @@ namespace PryEdDiaz
             MessageBox.Show("Datos Borrados");
             txtNombreColor.Clear();
         }
+
+        private void frmColores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreColor_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombreColor.Text == "")
+            {
+                cmdGrabar.Enabled = false;
+            }
+            else
+            {
+                cmdGrabar.Enabled = true;
+            }
+        }
     }
 }

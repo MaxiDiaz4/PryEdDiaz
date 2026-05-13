@@ -24,7 +24,8 @@ namespace PryEdDiaz
 
         private void pilaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmPila v = new frmPila();
+            v.ShowDialog();
         }
 
         private void datosDelDesarolladorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,6 +66,12 @@ namespace PryEdDiaz
         private void carrerasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCarreras v = new frmCarreras();
+            v.ShowDialog();
+        }
+
+        private void colaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCola v = new frmCola();
             v.ShowDialog();
         }
     }

@@ -57,6 +57,7 @@
             // 
             // cmdGrabarCarrera
             // 
+            this.cmdGrabarCarrera.Enabled = false;
             this.cmdGrabarCarrera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGrabarCarrera.Location = new System.Drawing.Point(154, 101);
             this.cmdGrabarCarrera.Name = "cmdGrabarCarrera";
@@ -72,6 +73,7 @@
             this.txtCarrera.Name = "txtCarrera";
             this.txtCarrera.Size = new System.Drawing.Size(164, 20);
             this.txtCarrera.TabIndex = 8;
+            this.txtCarrera.TextChanged += new System.EventHandler(this.txtCarrera_TextChanged);
             // 
             // lblTituloCarrera
             // 
@@ -108,6 +110,7 @@
             this.Name = "frmCarreras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCarreras";
+            this.Load += new System.EventHandler(this.frmCarreras_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

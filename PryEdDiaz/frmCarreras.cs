@@ -36,5 +36,22 @@ namespace PryEdDiaz
             carrera.Recorrer(lstCarreras);
             txtCarrera.Text = "";
         }
+
+        private void frmCarreras_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCarrera_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCarrera.Text == "")
+            {
+                cmdGrabarCarrera.Enabled = false;
+            }
+            else
+            {
+                cmdGrabarCarrera.Enabled = true;
+            }
+        }
     }
 }

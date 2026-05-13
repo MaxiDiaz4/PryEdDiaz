@@ -36,5 +36,17 @@ namespace PryEdDiaz
             MessageBox.Show("Datos Borrados");
             txtNombreMes.Clear();
         }
+
+        private void txtNombreMes_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombreMes.Text == "")
+            {
+                cmdGrabar.Enabled = false;
+            }
+            else
+            {
+                cmdGrabar.Enabled = true;
+            }
+        }
     }
 }

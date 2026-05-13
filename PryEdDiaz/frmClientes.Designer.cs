@@ -86,6 +86,7 @@
             // cmdGrabarCliente
             // 
             this.cmdGrabarCliente.BackColor = System.Drawing.Color.White;
+            this.cmdGrabarCliente.Enabled = false;
             this.cmdGrabarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGrabarCliente.Location = new System.Drawing.Point(270, 212);
             this.cmdGrabarCliente.Name = "cmdGrabarCliente";
@@ -101,6 +102,7 @@
             this.txtDeuda.Name = "txtDeuda";
             this.txtDeuda.Size = new System.Drawing.Size(212, 20);
             this.txtDeuda.TabIndex = 16;
+            this.txtDeuda.TextChanged += new System.EventHandler(this.txtDeuda_TextChanged);
             // 
             // txtNombreCliente
             // 
@@ -108,6 +110,7 @@
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(212, 20);
             this.txtNombreCliente.TabIndex = 15;
+            this.txtNombreCliente.TextChanged += new System.EventHandler(this.txtNombreCliente_TextChanged);
             // 
             // mtbCodigoCliente
             // 
@@ -118,6 +121,7 @@
             this.mtbCodigoCliente.Size = new System.Drawing.Size(212, 20);
             this.mtbCodigoCliente.TabIndex = 14;
             this.mtbCodigoCliente.ValidatingType = typeof(int);
+            this.mtbCodigoCliente.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbCodigoCliente_MaskInputRejected);
             // 
             // lblNombreCliente
             // 

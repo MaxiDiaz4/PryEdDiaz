@@ -63,6 +63,16 @@ namespace PryEdDiaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cola {
+            get {
+                object obj = ResourceManager.GetObject("cola", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mii {
             get {
                 object obj = ResourceManager.GetObject("mii", resourceCulture);
@@ -76,6 +86,16 @@ namespace PryEdDiaz.Properties {
         internal static System.Drawing.Bitmap PA {
             get {
                 object obj = ResourceManager.GetObject("PA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pila {
+            get {
+                object obj = ResourceManager.GetObject("pila", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

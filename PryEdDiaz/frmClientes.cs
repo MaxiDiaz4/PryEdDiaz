@@ -17,6 +17,21 @@ namespace PryEdDiaz
             InitializeComponent();
         }
 
+        private void Validar()
+        {
+
+            if (mtbCodigoCliente.Text != "" &&
+                txtNombreCliente.Text != "" &&
+                txtDeuda.Text != "")
+            {
+                cmdGrabarCliente.Enabled = true;
+            }
+            else
+            {
+                cmdGrabarCliente.Enabled = false;
+            }
+        }
+
         private void cmdLimpiar_Click(object sender, EventArgs e)
         {
             clsArchivo clientes = new clsArchivo();
@@ -35,6 +50,24 @@ namespace PryEdDiaz
             clientes.NomArchi = "Clientes.csv";
             clientes.Grabar(mtbCodigoCliente.Text, txtNombreCliente.Text, txtDeuda.Text);
             clientes.Recorrer(dgvClientes);
+            mtbCodigoCliente.Clear();
+            txtNombreCliente.Clear();
+            txtDeuda.Clear();
+        }
+
+        private void mtbCodigoCliente_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+           Validar();
+        }
+
+        private void txtNombreCliente_TextChanged(object sender, EventArgs e)
+        {
+            Validar();
+        }
+
+        private void txtDeuda_TextChanged(object sender, EventArgs e)
+        {
+            Validar();
         }
     }
 }

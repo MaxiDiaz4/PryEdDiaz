@@ -49,6 +49,7 @@
             // cmdGrabar
             // 
             this.cmdGrabar.BackColor = System.Drawing.Color.White;
+            this.cmdGrabar.Enabled = false;
             this.cmdGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGrabar.Location = new System.Drawing.Point(146, 98);
             this.cmdGrabar.Name = "cmdGrabar";
@@ -64,6 +65,7 @@
             this.txtNombreMes.Name = "txtNombreMes";
             this.txtNombreMes.Size = new System.Drawing.Size(177, 20);
             this.txtNombreMes.TabIndex = 9;
+            this.txtNombreMes.TextChanged += new System.EventHandler(this.txtNombreMes_TextChanged);
             // 
             // lstMeses
             // 

@@ -86,6 +86,7 @@
             // cmdGrabar
             // 
             this.cmdGrabar.BackColor = System.Drawing.Color.White;
+            this.cmdGrabar.Enabled = false;
             this.cmdGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGrabar.Location = new System.Drawing.Point(236, 204);
             this.cmdGrabar.Name = "cmdGrabar";
@@ -110,6 +111,7 @@
             this.txtNombreAlumno.Name = "txtNombreAlumno";
             this.txtNombreAlumno.Size = new System.Drawing.Size(209, 20);
             this.txtNombreAlumno.TabIndex = 15;
+            this.txtNombreAlumno.TextChanged += new System.EventHandler(this.txtNombreAlumno_TextChanged);
             // 
             // mtbCodigoAlumno
             // 
