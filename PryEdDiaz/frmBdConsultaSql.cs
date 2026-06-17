@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PryEdDiaz
+{
+    public partial class frmBdConsultaSql : Form
+    {
+        public frmBdConsultaSql()
+        {
+            InitializeComponent();
+        }
+
+        private void frmBdConsultaSql_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdListar_Click(object sender, EventArgs e)
+        {
+            clsBaseDatos BaseDatos = new clsBaseDatos();
+            BaseDatos.Listar(dgvConsultaSQL, txtConsulta.Text);
+        }
+    }
+}

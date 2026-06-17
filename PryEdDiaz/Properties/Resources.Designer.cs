@@ -73,6 +73,16 @@ namespace PryEdDiaz.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grafo {
+            get {
+                object obj = ResourceManager.GetObject("grafo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LD {
             get {
                 object obj = ResourceManager.GetObject("LD", resourceCulture);

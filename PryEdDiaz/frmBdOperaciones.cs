@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PryEdDiaz
+{
+    public partial class frmBdOperaciones : Form
+    {
+        public frmBdOperaciones()
+        {
+            InitializeComponent();
+        }
+        clsBaseDatos bd = new clsBaseDatos();
+        private void frmBdOperaciones_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdSelecSimple_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdProySimple_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT TITULO " +
+                          "FROM LIBRO " +
+                          "ORDER BY 1 DESC";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdProyMulti_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT TITULO, AÑO " +
+                          "FROM LIBRO " +
+                          "ORDER BY TITULO ASC";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdSelecConv_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * " +
+                         "FROM (select * from libro where idIdioma > 1 ) as X " +
+                         "WHERE IDPAIS = 2 ";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdJuntar_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT TITULO, NOMBRE  " +
+                          "from LIBRO inner join PAIS " +
+                          "on LIBRO.IDPAIS = PAIS.IDPAIS";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdInterseccion_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * from libro " +
+                          "where idIdioma = 2 and " +
+                          "idLibro in " +
+                          "(Select idLibro from libro where IdPais = 3 ) " +
+                          "order by 1 asc ";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdDiferencia_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * from libro " +
+                          "where idIdioma = 2 and " +
+                          "idLibro not in " +
+                          "(Select idLibro from libro where IdPais = 3 ) " +
+                          "order by 1 asc ";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+
+        private void cmdUnion_Click(object sender, EventArgs e)
+        {
+            String varSQL = "SELECT * " +
+                          "FROM LIBRO " +
+                          "WHERE IDIDIOMA = 1 " +
+                          "UNION " +
+                          "SELECT * " +
+                          "FROM LIBRO " +
+                          "WHERE IDIDIOMA = 2";
+            bd.Listar(dgvBaseDatos, varSQL);
+        }
+    }
+    
+}
